@@ -21,7 +21,7 @@ const LoginForm = props => {
       error = "Incorrect username or password";
     } else {
       const { history } = props;
-      history.replace("/");
+      history.replace("/home");
     }
   
     setErrors(error);

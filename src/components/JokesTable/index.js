@@ -21,7 +21,7 @@ const JokesTable = props => {
   const gotologin=(e)=>{
     e.preventDefault();
     const {history}=props
-    history.replace('/login')
+    history.replace('/')
   }
 
   return (

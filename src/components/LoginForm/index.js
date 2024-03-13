@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
-import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 const LoginForm = props => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState("");
@@ -52,7 +52,9 @@ const LoginForm = props => {
               className='inputelements'
             />
           </div>
-          <button className='button' type="submit">Login</button>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
           {errors && <span className="error">{errors}</span>}
         </form>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
-import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 const LoginForm = props => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [errors, setErrors] = useState("");

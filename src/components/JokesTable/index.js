@@ -47,7 +47,7 @@ const JokesTable = props => {
         </table>
       </div>
       <div className='bottom'>
-      <button onClick={gotologin} className='btn btn-danger'>Logout</button>
+      <button onClick={gotologin} className='logoutbutton'>Logout</button>
       </div>
     </div>
   );

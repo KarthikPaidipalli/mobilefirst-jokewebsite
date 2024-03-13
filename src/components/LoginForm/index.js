@@ -52,9 +52,7 @@ const LoginForm = props => {
               className='inputelements'
             />
           </div>
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
+          <button className='button' type="submit">Login</button>
           {errors && <span className="error">{errors}</span>}
         </form>
       </div>

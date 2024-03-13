@@ -45,7 +45,9 @@ const JokesTable = props => {
           </tbody>
         </table>
       </div>
-      <button onClick={gotologin}>Logout</button>
+      <div className='bottom'>
+      <button onClick={gotologin} className='logoutbutton'>Logout</button>
+      </div>
     </div>
   );
 };

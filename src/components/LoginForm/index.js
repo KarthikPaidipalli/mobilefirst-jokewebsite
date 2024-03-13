@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
 import './index.css';
 
 const LoginForm = props => {
   const [formData, setFormData] = useState({ email: '', password: '' });
-  const [errors, setErrors] = useState({ emailerror: "", passworderror: "" });
+  const [errors, setErrors] = useState("");
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -12,21 +11,20 @@ const LoginForm = props => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const { email, password } = formData;
-    const errors = {};
+    let error = "";
+  
     if (email.length === 0) {
-      setErrors(errors.emailerror = "Email is required")
+      alert("Username is required")
     } else if (password.length === 0) {
-      setErrors(errors.passworderror = "Password is required")
+      alert("Password is required");
+    } else if (email !== "karthik" || password !== "karthik123") {
+      error = "Incorrect username or password";
     } else {
-      if (email === "karthik" && password === "karthik123") {
-        const {history}=props
-        history.replace("/");
-      }
-      else{
-        setErrors(errors.emailerror = "Email is required")
-        setErrors(errors.passworderror = "Password is required")
-      }
+      const { history } = props;
+      history.replace("/");
     }
+  
+    setErrors(error);
   };
 
   return (
@@ -35,7 +33,7 @@ const LoginForm = props => {
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>Email:</label>
+            <label>Username:</label>
             <input
               type="text"
               name="email"
@@ -43,7 +41,6 @@ const LoginForm = props => {
               onChange={handleChange}
               className='inputelements'
             />
-            {errors.email && <span className="error">{errors.email}</span>}
           </div>
           <div className="form-group">
             <label>Password:</label>
@@ -54,9 +51,9 @@ const LoginForm = props => {
               onChange={handleChange}
               className='inputelements'
             />
-            {errors.password && <span className="error">{errors.password}</span>}
           </div>
-          <button type="submit">Login</button>
+          <button className='button' type="submit">Login</button>
+          {errors && <span className="error">{errors}</span>}
         </form>
       </div>
     </div>
